@@ -27,12 +27,36 @@ export default {
   },
   methods: {
       calcular_total(){
-      // let total_parcial = parseFloat(this.valor_veiculo) - parseFloat(this.valor_entrada)
-       let tot_juros = this.calcular_juros(this.valor_veiculo, this.valor_taxa_juros)
-       console.log((tot_juros).toFixed(2))
+       // var total_com_entrada = 0
+      let total_com_entrada = this.calcular_entrada(this.valor_veiculo, this.valor_entrada)
+      // let tot_juros = this.calcular_juros(this.valor_veiculo, this.valor_taxa_juros)
+
+       let doze_meses = this.calcular_doze_meses(total_com_entrada)
+       console.log((doze_meses).toFixed(2))
       },
       calcular_juros(valVeic, juros){
         return parseFloat((valVeic * juros) / 100)
+      },
+      calcular_entrada(valVeic, valEntrada){
+        return parseFloat(valVeic - valEntrada)
+      },
+      calcular_doze_meses(valComEntrada){
+        return parseFloat(valComEntrada / 12)
+      },
+      calcular_dezoito_meses(valComEntrada){
+        return parseFloat(valComEntrada / 18)
+      },
+      calcular_vinte_quatro_meses(valComEntrada){
+        return parseFloat(valComEntrada / 24)
+      },
+      calcular_trinta_seis_meses(valComEntrada){
+        return parseFloat(valComEntrada / 36)
+      },
+      calcular_quarenta_oito_meses(valComEntrada){
+        return parseFloat(valComEntrada / 48)
+      },
+      calcular_sessenta_meses(valComEntrada){
+        return parseFloat(valComEntrada / 60)
       }
   }
 }
