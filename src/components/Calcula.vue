@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <!-- <v-text>aaaa</v-text> -->
     <div>
         <label>Valor do veículo:</label>
         <input type="text" v-model="valor_veiculo">
@@ -19,12 +18,12 @@
     <input type="button" value="Limpar" v-on:click="limpar()">
   </div>
   <div>
-    <h3>Prestações: 12x R${{ doze_meses }} | total a pagar: R${{ total_12 }}</h3>
-    <h3>Prestações: 18x R${{ dezoito_meses }} | total a pagar: R${{ total_18 }}</h3>
-    <h3>Prestações: 24x R${{ vinte_quatro_meses }} | total a pagar: R${{ total_24 }}</h3>
-    <h3>Prestações: 36x R${{ trinta_seis_meses }} | total a pagar: R${{ total_36 }}</h3>
-    <h3>Prestações: 48x R${{ quarenta_oito_meses }} | total a pagar: R${{ total_48 }}</h3>
-    <h3>Prestações: 60x R${{ sessenta_meses }} | total a pagar: R${{ total_60 }}</h3>
+    <h3>Prestações: 12x R${{ doze_meses }} | valor a pagar: R${{ total_12 }}</h3>
+    <h3>Prestações: 18x R${{ dezoito_meses }} | valor a pagar: R${{ total_18 }}</h3>
+    <h3>Prestações: 24x R${{ vinte_quatro_meses }} | valor a pagar: R${{ total_24 }}</h3>
+    <h3>Prestações: 36x R${{ trinta_seis_meses }} | valor a pagar: R${{ total_36 }}</h3>
+    <h3>Prestações: 48x R${{ quarenta_oito_meses }} | valor a pagar: R${{ total_48 }}</h3>
+    <h3>Prestações: 60x R${{ sessenta_meses }} | valor a pagar: R${{ total_60 }}</h3>
   </div>
 </template>
 
@@ -132,7 +131,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .calc{
     padding: 10px;
