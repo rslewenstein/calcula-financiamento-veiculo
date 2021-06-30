@@ -1,6 +1,6 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <Calcula msg="Calcula Financiamento Veicular"/>
+  <Calcula msg="Simulador de Financiamento Veicular"/>
 </template>
 
 <script>
