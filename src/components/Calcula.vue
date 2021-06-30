@@ -16,14 +16,15 @@
     </div>
     
     <input type="button" value="Calcular" v-on:click="calcular_total()">
+    <input type="button" value="Limpar" v-on:click="limpar()">
   </div>
   <div>
-    <h3>12x R${{ doze_meses }}, total: R${{ total_12 }}</h3>
-    <h3>18x R${{ dezoito_meses }}, total: R${{ total_18 }}</h3>
-    <h3>24x R${{ vinte_quatro_meses }}, total: R${{ total_24 }}</h3>
-    <h3>36x R${{ trinta_seis_meses }}, total: R${{ total_36 }}</h3>
-    <h3>48x R${{ quarenta_oito_meses }}, total: R${{ total_48 }}</h3>
-    <h3>60x R${{ sessenta_meses }}, total: R${{ total_60 }}</h3>
+    <h3>Prestações: 12x R${{ doze_meses }} | total a pagar: R${{ total_12 }}</h3>
+    <h3>Prestações: 18x R${{ dezoito_meses }} | total a pagar: R${{ total_18 }}</h3>
+    <h3>Prestações: 24x R${{ vinte_quatro_meses }} | total a pagar: R${{ total_24 }}</h3>
+    <h3>Prestações: 36x R${{ trinta_seis_meses }} | total a pagar: R${{ total_36 }}</h3>
+    <h3>Prestações: 48x R${{ quarenta_oito_meses }} | total a pagar: R${{ total_48 }}</h3>
+    <h3>Prestações: 60x R${{ sessenta_meses }} | total a pagar: R${{ total_60 }}</h3>
   </div>
 </template>
 
@@ -109,6 +110,23 @@ export default {
       },
       calcular_total_60(valParcela){
         return parseFloat(valParcela * 60)
+      },
+      limpar(){
+        this.valor_veiculo = "",
+        this.valor_entrada = "",
+        this.valor_taxa_juros = "",
+        this.doze_meses = 0,
+        this.dezoito_meses = 0,
+        this.vinte_quatro_meses = 0,
+        this.trinta_seis_meses = 0,
+        this.quarenta_oito_meses  = 0,
+        this.sessenta_meses = 0,
+        this.total_12 = 0,
+        this.total_18  = 0,
+        this.total_24 = 0,
+        this.total_36 = 0,
+        this.total_48 = 0,
+        this.total_60 = 0
       }
   }
 }
