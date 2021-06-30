@@ -54,19 +54,19 @@ export default {
         let tot_juros = this.calcular_juros(this.valor_veiculo, this.valor_taxa_juros)
         let total_com_entrada = this.calcular_entrada(this.valor_veiculo, this.valor_entrada)
 
-        this.doze_meses = (this.calcular_doze_meses(total_com_entrada, tot_juros)).toFixed(2)
-        this.dezoito_meses = (this.calcular_dezoito_meses(total_com_entrada, tot_juros)).toFixed(2)
-        this.vinte_quatro_meses = (this.calcular_vinte_quatro_meses(total_com_entrada, tot_juros)).toFixed(2)
-        this.trinta_seis_meses = (this.calcular_trinta_seis_meses(total_com_entrada, tot_juros)).toFixed(2)
-        this.quarenta_oito_meses = (this.calcular_quarenta_oito_meses(total_com_entrada, tot_juros)).toFixed(2)
-        this.sessenta_meses = (this.calcular_sessenta_meses(total_com_entrada, tot_juros)).toFixed(2)
+        this.doze_meses = (this.calcular_parcela(total_com_entrada, tot_juros, 12)).toFixed(2)
+        this.dezoito_meses = (this.calcular_parcela(total_com_entrada, tot_juros, 18)).toFixed(2)
+        this.vinte_quatro_meses = (this.calcular_parcela(total_com_entrada, tot_juros, 24)).toFixed(2)
+        this.trinta_seis_meses = (this.calcular_parcela(total_com_entrada, tot_juros, 36)).toFixed(2)
+        this.quarenta_oito_meses = (this.calcular_parcela(total_com_entrada, tot_juros, 48)).toFixed(2)
+        this.sessenta_meses = (this.calcular_parcela(total_com_entrada, tot_juros, 60)).toFixed(2)
 
-        this.total_12 = (this.calcular_total_12(this.doze_meses)).toFixed(2)
-        this.total_18 = (this.calcular_total_18(this.dezoito_meses)).toFixed(2)
-        this.total_24 = (this.calcular_total_24(this.vinte_quatro_meses)).toFixed(2)
-        this.total_36 = (this.calcular_total_36(this.trinta_seis_meses)).toFixed(2)
-        this.total_48 = (this.calcular_total_48(this.quarenta_oito_meses)).toFixed(2)
-        this.total_60 = (this.calcular_total_60(this.sessenta_meses)).toFixed(2)
+        this.total_12 = (this.calcular_total_a_pagar(this.doze_meses, 12)).toFixed(2)
+        this.total_18 = (this.calcular_total_a_pagar(this.dezoito_meses, 18)).toFixed(2)
+        this.total_24 = (this.calcular_total_a_pagar(this.vinte_quatro_meses, 24)).toFixed(2)
+        this.total_36 = (this.calcular_total_a_pagar(this.trinta_seis_meses, 36)).toFixed(2)
+        this.total_48 = (this.calcular_total_a_pagar(this.quarenta_oito_meses, 48)).toFixed(2)
+        this.total_60 = (this.calcular_total_a_pagar(this.sessenta_meses, 60)).toFixed(2)
       },
       calcular_juros(valVeic, juros){
         return parseFloat((valVeic * juros) / 100)
@@ -74,41 +74,11 @@ export default {
       calcular_entrada(valVeic, valEntrada){
         return parseFloat(valVeic - valEntrada)
       },
-      calcular_doze_meses(valComEntrada, valJuros){
-        return parseFloat((valComEntrada / 12) + valJuros)
+      calcular_parcela(valComEntrada, valJuros, NumParcelas){
+        return parseFloat((valComEntrada / NumParcelas) + valJuros)
       },
-      calcular_dezoito_meses(valComEntrada, valJuros){
-        return parseFloat((valComEntrada / 18) + valJuros)
-      },
-      calcular_vinte_quatro_meses(valComEntrada, valJuros){
-        return parseFloat((valComEntrada / 24) + valJuros)
-      },
-      calcular_trinta_seis_meses(valComEntrada, valJuros){
-        return parseFloat((valComEntrada / 36) + valJuros)
-      },
-      calcular_quarenta_oito_meses(valComEntrada, valJuros){
-        return parseFloat((valComEntrada / 48) + valJuros)
-      },
-      calcular_sessenta_meses(valComEntrada, valJuros){
-        return parseFloat((valComEntrada / 60) + valJuros)
-      },
-      calcular_total_12(valParcela){
-        return parseFloat(valParcela * 12)
-      },
-      calcular_total_18(valParcela){
-        return parseFloat(valParcela * 18)
-      },
-      calcular_total_24(valParcela){
-        return parseFloat(valParcela * 24)
-      },
-      calcular_total_36(valParcela){
-        return parseFloat(valParcela * 36)
-      },
-      calcular_total_48(valParcela){
-        return parseFloat(valParcela * 48)
-      },
-      calcular_total_60(valParcela){
-        return parseFloat(valParcela * 60)
+      calcular_total_a_pagar(valParcela, numParcela){
+        return parseFloat(valParcela * numParcela)
       },
       limpar(){
         this.valor_veiculo = "",
@@ -139,15 +109,5 @@ export default {
 input{
     margin: 10px;
 }
-/* ul {
-  list-style-type: none;
-  padding: 0;
-} */
-/* li {
-  display: inline-block;
-  margin: 0 10px;
-} */
-a {
-  color: #42b983;
-}
+
 </style>
