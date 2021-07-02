@@ -119,7 +119,7 @@ export default {
     max-width: 600px;
 }
 input{
-    margin: 10px;
+    margin: 5px;
 }
 
 </style>
